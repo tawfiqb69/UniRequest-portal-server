@@ -2,6 +2,8 @@ import express from "express";
 import cors from "cors";
 import { env } from "./config/env.js";
 import meRoutes from "./routes/me.js";
+import usersRoutes from "./routes/users.js";
+import uploadPhotoRoutes from "./routes/uploadPhoto.js";
 
 
 const app = express();
@@ -18,7 +20,8 @@ app.get("/health", (req, res) => {
 });
 
 app.use("/api/me", meRoutes);
-
+app.use("/api/users", usersRoutes);
+app.use("/api/upload-photo", uploadPhotoRoutes);
 
 // Any route that does not exist
 app.use((req, res) => {
