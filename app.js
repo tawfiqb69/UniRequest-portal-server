@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import { env } from "./config/env.js";
+import meRoutes from "./routes/me.js";
 
 const app = express();
 
@@ -14,6 +15,8 @@ app.use(express.json());
 app.get("/health", (req, res) => {
   res.json({ success: true, message: "Server is running", data: null });
 });
+
+app.use("/api/me", meRoutes);
 
 // Any route that does not exist
 app.use((req, res) => {
