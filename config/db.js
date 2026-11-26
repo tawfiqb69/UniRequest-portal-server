@@ -1,5 +1,6 @@
 import { MongoClient } from "mongodb";
 import { env } from "./env.js";
+import { DB_NAME } from "../utils/constants.js";
 
 // Keep the connection on globalThis so it is reused and not opened again and again
 const cache = globalThis.__mongoCache || (globalThis.__mongoCache = { client: null, promise: null });
@@ -21,6 +22,5 @@ export const getDb = async () => {
     cache.promise = null;
     throw error;
   }
-  // The database name comes from inside the DB_URI
-  return cache.client.db();
+  return cache.client.db(DB_NAME);
 };

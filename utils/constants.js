@@ -4,3 +4,6 @@ export const ROLES = {
   REVIEWER: "reviewer",
   ADMIN: "admin",
 };
+
+// The one database name for the whole server
+export const DB_NAME = "unirequest-portal";

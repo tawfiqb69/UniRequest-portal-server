@@ -3,6 +3,7 @@ import cors from "cors";
 import { env } from "./config/env.js";
 import meRoutes from "./routes/me.js";
 
+
 const app = express();
 
 // Only our own client website may call this server
@@ -17,6 +18,7 @@ app.get("/health", (req, res) => {
 });
 
 app.use("/api/me", meRoutes);
+
 
 // Any route that does not exist
 app.use((req, res) => {
