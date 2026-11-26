@@ -7,3 +7,6 @@ export const ROLES = {
 
 // The one database name for the whole server
 export const DB_NAME = "unirequest-portal";
+
+// Maximum size of one uploaded file (5 MB)
+export const MAX_FILE_SIZE_BYTES = 5 * 1024 * 1024;
