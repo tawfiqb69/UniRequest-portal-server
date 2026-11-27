@@ -10,3 +10,6 @@ export const DB_NAME = "unirequest-portal";
 
 // Maximum size of one uploaded file (5 MB)
 export const MAX_FILE_SIZE_BYTES = 5 * 1024 * 1024;
+
+// Max number of categories one request can ask for (stops huge queries)
+export const MAX_CATEGORY_LIMIT = 50;
